@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bsulup5ifbj35"]
+
+[ext_resource type="Script" uid="uid://blg5b3xfldfns" path="res://jogo/main.gd" id="1_wd0a0"]
+[ext_resource type="Texture2D" uid="uid://06vm8khaiwj6" path="res://jogo/assets/time.png" id="2_7j17t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7mbf"]
+size = Vector2(1151.5, 493.75)
+
+[node name="Node2D" type="Node2D" unique_id=527100172]
+script = ExtResource("1_wd0a0")
+
+[node name="target_timer" type="Timer" parent="." unique_id=1570498348]
+wait_time = 0.2
+
+[node name="game_timer" type="Timer" parent="." unique_id=705560565]
+wait_time = 10.0
+one_shot = true
+
+[node name="score_text" type="Label" parent="." unique_id=1492865457]
+offset_right = 1151.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 34
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="targets" type="Node2D" parent="." unique_id=60599881]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1186985403]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1788255984]
+position = Vector2(577, 377)
+shape = SubResource("RectangleShape2D_y7mbf")
+
+[node name="time_progress" type="TextureProgressBar" parent="." unique_id=15130478]
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 440.0
+offset_bottom = 77.0
+max_value = 10.0
+texture_progress = ExtResource("2_7j17t")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1189937585]
+download_file = "res://jogo/response.txt"
+timeout = 1.0
+
+[connection signal="timeout" from="target_timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="game_timer" to="." method="_on_game_timer_timeout"]

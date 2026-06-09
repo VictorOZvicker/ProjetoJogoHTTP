@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://brsy5eswpwxmx"]
+
+[ext_resource type="Script" uid="uid://dwqf7jyjjtrjy" path="res://jogo/scenes/target.gd" id="1_ivjfy"]
+[ext_resource type="Texture2D" uid="uid://b13on8ubcfqce" path="res://jogo/assets/target.png" id="2_ppti0"]
+
+[node name="Alvo" type="Node2D" unique_id=1500378844]
+script = ExtResource("1_ivjfy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1398957490]
+texture = ExtResource("2_ppti0")
+
+[node name="Button" type="TextureButton" parent="." unique_id=1163801410]
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dus3twc7bniiy"]
+
+[ext_resource type="Script" uid="uid://buw0osqko7u43" path="res://jogo/scenes/score_line.gd" id="1_ub6rl"]
+
+[node name="ScoreLine" type="HBoxContainer" unique_id=1380477291]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1015.0
+offset_bottom = -614.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ub6rl")
+
+[node name="player" type="Label" parent="." unique_id=2137963237]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Ozirot "
+
+[node name="score" type="Label" parent="." unique_id=946310090]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "1500"

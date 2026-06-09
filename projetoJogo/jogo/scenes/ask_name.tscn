@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c4cea8gt5sv8p"]
+
+[ext_resource type="Script" uid="uid://cu53fde4t8cwj" path="res://jogo/scenes/ask_name.gd" id="1_1ts8s"]
+
+[node name="AskName" type="Control" unique_id=642632779]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1ts8s")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=266351043]
+modulate = Color(1, 1, 1, 0.38039216)
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 648.0
+
+[node name="name_input" type="LineEdit" parent="." unique_id=1047774641]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 290.0
+offset_right = 732.0
+offset_bottom = 324.0
+placeholder_text = "Put your name here"
+
+[connection signal="text_submitted" from="name_input" to="." method="_on_name_input_text_submitted"]

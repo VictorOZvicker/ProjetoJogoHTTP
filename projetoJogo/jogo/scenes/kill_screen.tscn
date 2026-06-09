@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://btq60hxceu8ar"]
+
+[ext_resource type="Script" uid="uid://ptvwnq38uaps" path="res://jogo/scenes/kill_screen.gd" id="1_lrn6y"]
+
+[node name="KillScreen" type="Control" unique_id=20343052]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lrn6y")
+
+[node name="score_text" type="Label" parent="." unique_id=25457342]
+layout_mode = 0
+offset_right = 630.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 34
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1406380421]
+modulate = Color(1, 1, 1, 0.19215687)
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 659.0
+color = Color(0.41960785, 1, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1348252172]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 120.0
+offset_right = 464.0
+offset_bottom = 187.0
+theme_override_colors/font_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+theme_override_font_sizes/font_size = 48
+text = "Game Over"
+
+[node name="try_again" type="Button" parent="." unique_id=701649363]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 221.0
+offset_right = 464.0
+offset_bottom = 332.0
+theme_override_colors/font_color = Color(0, 0.8745098, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Try again"
+
+[node name="quit" type="Button" parent="." unique_id=1340044331]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 357.0
+offset_right = 421.0
+offset_bottom = 419.0
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "Quit"
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=525243035]
+modulate = Color(1, 1, 1, 0.31764707)
+layout_mode = 0
+offset_left = 630.0
+offset_top = 44.0
+offset_right = 1114.0
+offset_bottom = 619.0
+
+[node name="top_scores" type="Label" parent="." unique_id=1093771754]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 48.0
+offset_right = 1099.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 48
+text = "Top Scores"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=1869723936]
+layout_mode = 0
+offset_left = 631.0
+offset_top = 139.0
+offset_right = 1113.0
+offset_bottom = 617.0
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=286897247]
+
+[connection signal="pressed" from="try_again" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
